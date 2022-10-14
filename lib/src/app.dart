@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../search.dart';
 import 'screens/mail.dart';
 import 'screens/search.dart';
 import 'screens/home.dart';
@@ -30,7 +31,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const _screens = [
     HomeScreen(),
-    BookmarkScreen(),
+    SearchPage(),
     NotificationScreen(),
     AccountScreen()
   ];
@@ -53,8 +54,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.notifications), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
             BottomNavigationBarItem(icon: Icon(Icons.mail), label: ''),
           ],
           type: BottomNavigationBarType.fixed,
