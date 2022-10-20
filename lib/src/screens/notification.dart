@@ -24,7 +24,10 @@ class NotificationScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.settings),
+            icon: const Icon(
+              Icons.settings_outlined,
+              color: Colors.black,
+            ),
           )
         ],
         backgroundColor: Color.fromARGB(255, 243, 243, 243),
