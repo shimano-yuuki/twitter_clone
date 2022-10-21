@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'screens/search.dart';
 import 'screens/mail.dart';
-import 'screens/search.dart';
 import 'screens/home.dart';
 import 'screens/notification.dart';
 
@@ -31,7 +30,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const _screens = [
     HomeScreen(),
-    SearchPage(),
+    const SearchPage(),
     NotificationScreen(),
     AccountScreen()
   ];
