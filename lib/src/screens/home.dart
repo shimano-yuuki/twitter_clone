@@ -3,22 +3,60 @@ import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return DefaultTabController(
       initialIndex: 0, // 最初に表示するタブ
       length: 2, // タブの数
       child: Scaffold(
+        key: _scaffoldKey,
+        drawer: Drawer(
+          child: Column(
+            children: [
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text('Person 1'),
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text('Person 2'),
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text('Person 3'),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
-          actions: [IconButton(icon: Icon(Icons.auto_awesome_outlined, color: Colors.black,size: 35,),onPressed: (){},)],
-          title: IconButton(icon: SvgPicture.asset('assets/twitter_icons.svg',semanticsLabel: 'twitter_icons',width: 50,height: 50,),onPressed: (){},),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.auto_awesome_outlined,
+                color: Colors.black,
+                size: 35,
+              ),
+              onPressed: () {},
+            )
+          ],
+          title: IconButton(
+            icon: SvgPicture.asset(
+              'assets/twitter_icons.svg',
+              semanticsLabel: 'twitter_icons',
+              width: 50,
+              height: 50,
+            ),
+            onPressed: () {},
+          ),
           leading: IconButton(
             icon: CircleAvatar(
               backgroundColor: Colors.grey,
               radius: 16,
             ),
-            onPressed: () {},
+            onPressed: () {
+              _scaffoldKey.currentState?.openDrawer();
+            },
           ),
           backgroundColor: Color.fromARGB(255, 243, 243, 243),
           elevation: 0.0,
@@ -49,17 +87,21 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         body: const TabBarView(
-          children:[
+          children: [
             Center(
               child: Text('ホーム', style: TextStyle(fontSize: 32.0)),
             ),
-
             Center(
               child: Text('台風地震', style: TextStyle(fontSize: 32.0)),
             ),
           ],
         ),
-        floatingActionButton: Container(child: FloatingActionButton(child:Icon(Icons.add),onPressed: () {},),),
+        floatingActionButton: Container(
+          child: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {},
+          ),
+        ),
       ),
     );
   }
