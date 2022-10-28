@@ -64,7 +64,6 @@ class NotificationScreen extends StatelessWidget {
             ListView.builder(
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  height: 90,
                   padding: const EdgeInsets.only(left: 10),
                   decoration: const BoxDecoration(
                       border: Border(
@@ -91,12 +90,12 @@ class NotificationScreen extends StatelessWidget {
                                   width: 8,
                                 ),
                                 Text("@aaaaaa",
-                                    style: TextStyle(color: Colors.grey)),
+                                    style: TextStyle(color: Colors.black54)),
                                 SizedBox(
                                   width: 8,
                                 ),
                                 Text("2022/10/27",
-                                    style: TextStyle(color: Colors.grey)),
+                                    style: TextStyle(color: Colors.black54)),
                               ],
                             ),
                           ],
@@ -109,46 +108,90 @@ class NotificationScreen extends StatelessWidget {
             ),
             ListView.builder(
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  height: 90,
-                  padding: const EdgeInsets.only(left: 10),
-                  decoration: const BoxDecoration(
-                      border: Border(
-                          bottom:
-                              BorderSide(width: 0.5, color: Colors.black26))),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.blue[100]),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 8, left: 10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  "namae",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  width: 8,
-                                ),
-                                Text("@aaaaaa",
-                                    style: TextStyle(color: Colors.grey)),
-                                SizedBox(
-                                  width: 8,
-                                ),
-                                Text("2022/10/27",
-                                    style: TextStyle(color: Colors.grey)),
-                              ],
-                            ),
-                          ],
+                return  Expanded(
+                  child: Container(
+                    height: 100,
+                    padding: const EdgeInsets.only(left: 10),
+                    decoration: const BoxDecoration(
+                        border: Border(
+                            bottom:
+                                BorderSide(width: 0.5, color: Colors.black26))),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 60,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.blue[100]),
                         ),
-                      ),
-                    ],
+                        Container(
+                          margin: EdgeInsets.only(top: 8, left: 10),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    "namae",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text("@aaaaaa",
+                                      style: TextStyle(color: Colors.black54)),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text("2022/10/27",
+                                      style: TextStyle(color: Colors.black54)),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "返信先:",
+                                    style: TextStyle(color: Colors.black54),
+                                  ),
+                                  Text(
+                                    "@bbbbbbb さん",
+                                    style: TextStyle(color: Colors.blue),
+                                  )
+                                ],
+                              ),
+                              // Text("ああああああああああああああああ"),
+                              Expanded(
+                                child: Row(
+                
+                                  children: [
+                                    IconButton(
+                                        iconSize: 18,
+                                        onPressed: () {},
+                                        icon: Icon(Icons.chat_bubble_outline)),
+                                    IconButton(
+                                        iconSize: 18,
+                                        onPressed: () {},
+                                        icon: Icon(Icons.cached)),
+                                    IconButton(
+                                        iconSize: 18,
+                                        onPressed: () {},
+                                        icon: Icon(Icons.favorite_border)),
+                                    RotatedBox(
+                                      quarterTurns: 3,
+                                      child: IconButton(
+                                        iconSize: 18,
+                                        onPressed: () {},
+                                        icon: Icon(Icons.logout),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
