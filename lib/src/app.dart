@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'screens/search.dart';
-import 'screens/mail.dart';
 import 'screens/home.dart';
+import 'screens/mail.dart';
 import 'screens/notification.dart';
+import 'screens/search.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
