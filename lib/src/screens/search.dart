@@ -131,18 +131,22 @@ class _MyHomePageState extends State<SearchPage> {
               itemBuilder: (context, index) {
                 var random = math.Random();
                 int a = random.nextInt(2);
+
                 if (index == 0) {
                   return SizedBox(
-                    height: 230,
+                    height: 231,
                     child: Column(
                       children: [
                         Container(
                           height: 220,
-                          color: Colors.black,
+                          color: Colors.blueGrey,
                         ),
                         Container(
                           height: 10,
-                          color: Colors.blue,
+                        ),
+                        Container(
+                          height: 0.5,
+                          color: Colors.black26,
                         )
                       ],
                     ),
@@ -224,7 +228,7 @@ class _MyHomePageState extends State<SearchPage> {
                 }
 
                 return SizedBox(
-                  height: 80,
+                  height: 70,
                   width: 1000,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -294,8 +298,137 @@ class _MyHomePageState extends State<SearchPage> {
             ListView.builder(
               itemCount: 30,
               itemBuilder: (context, index) {
+                var random = math.Random();
+                int b = random.nextInt(3);
+
+                if (index == 0) {
+                  return Container(
+                    height: 50,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 50,
+                          padding: const EdgeInsets.only(
+                            top: 11,
+                            bottom: 15,
+                            left: 18,
+                          ),
+                          child: const Text(
+                            "日本のトレンド",
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+
+                if (b == 0) {
+                  return SizedBox(
+                    height: 190,
+                    width: 1000,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Container(),
+                        ),
+                        Expanded(
+                          flex: 27,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(),
+                              ),
+                              Expanded(
+                                flex: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Expanded(
+                                      //flex: 20,
+                                      child: Container(
+                                        child: Text(
+                                          "${index}.トレンド",
+                                          style: const TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 30,
+                                      width: 60,
+                                      child: IconButton(
+                                        icon: const Icon(
+                                          Icons.more_horiz,
+                                          color: Colors.black12,
+                                        ),
+                                        onPressed: () {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                flex: 5,
+                                child: Container(
+                                  child: const Text(
+                                    "トレンドオオオオオオオオ",
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 25,
+                                child: Container(
+                                    margin: EdgeInsets.only(
+                                        top: 1, bottom: 4, right: 30),
+                                    width: 500,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    )),
+                              ),
+                              Expanded(
+                                flex: 5,
+                                child: Container(
+                                  child: Text(
+                                    "${math.Random().nextInt(40) + 1},${math.Random().nextInt(899) + 100}件のツイート",
+                                    style: const TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
                 return SizedBox(
-                  height: 80,
+                  height: 70,
                   width: 1000,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -314,10 +447,10 @@ class _MyHomePageState extends State<SearchPage> {
                               child: Container(),
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: 3,
                               child: Container(
                                 child: Text(
-                                  "${index + 1}.トレンド",
+                                  "${index}.トレンド",
                                   style: const TextStyle(
                                     fontSize: 12,
                                     color: Colors.black,
@@ -327,7 +460,7 @@ class _MyHomePageState extends State<SearchPage> {
                               ),
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: 3,
                               child: Container(
                                 child: const Text(
                                   "トレンドオオオオオオオオ",
@@ -340,7 +473,7 @@ class _MyHomePageState extends State<SearchPage> {
                               ),
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: 3,
                               child: Container(
                                 child: Text(
                                   "${math.Random().nextInt(40) + 1},${math.Random().nextInt(899) + 100}件のツイート",
